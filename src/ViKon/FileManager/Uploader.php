@@ -1,22 +1,35 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: van Gogh
- * Date: 2014.11.19.
- * Time: 20:33
- */
 
-namespace ViKon\FileUploader;
+namespace ViKon\FileManager;
 
 class Uploader
 {
+    /** @var string */
+    private $id;
+
+    /** @var mixed[] */
     private $options = [];
 
     public function __construct()
     {
+        $this->id      = config('file-manager::id');
         $this->options = [
             'dataType' => 'json',
         ];
+    }
+
+    /**
+     * Set field id
+     *
+     * @param string $id
+     *
+     * @return $this
+     */
+    public function id($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -90,13 +103,16 @@ class Uploader
     }
 
     /**
+     * Render content
+     *
      * @param string|null $template
      *
      * @return \Illuminate\View\View
      */
     public function render($template = null)
     {
-        return view($template === null ? config('file-uploader::template')
-                        : $template)->with('options', $this->options);
+        return view($template === null ? config('file-manager::template') : $template)
+            ->with('id', $this->id)
+            ->with('options', $this->options);
     }
 }

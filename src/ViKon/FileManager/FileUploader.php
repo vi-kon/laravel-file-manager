@@ -1,6 +1,6 @@
 <?php
 
-namespace ViKon\FileUploader;
+namespace ViKon\FileManager;
 
 class FileUploader
 {

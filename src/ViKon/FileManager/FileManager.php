@@ -1,6 +1,6 @@
 <?php
 
-namespace ViKon\FileUploader;
+namespace ViKon\FileManager;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

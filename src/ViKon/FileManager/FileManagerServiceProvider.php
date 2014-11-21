@@ -1,8 +1,8 @@
-<?php namespace ViKon\FileUploader;
+<?php namespace ViKon\FileManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class FileUploaderServiceProvider extends ServiceProvider
+class FileManagerServiceProvider extends ServiceProvider
 {
 
     /**
@@ -19,7 +19,7 @@ class FileUploaderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('vi-kon/file-uploader');
+        $this->package('vi-kon/file-manager');
     }
 
     /**
@@ -29,7 +29,7 @@ class FileUploaderServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('ViKon\FileUploader\FileUploader', 'ViKon\FileUploader\FileUploader');
+        $this->app->singleton('ViKon\FileManager\FileUploader', 'ViKon\FileManager\FileUploader');
     }
 
     /**
@@ -39,6 +39,6 @@ class FileUploaderServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['ViKon\FileUploader\FileUploader'];
+        return ['ViKon\FileManager\FileUploader'];
     }
 }
