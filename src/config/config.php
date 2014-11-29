@@ -21,11 +21,20 @@ return [
     'versioned' => true,
     /*
     | --------------------------------------------------------------------------
+    | Default input id
+    | --------------------------------------------------------------------------
+    | This id is used for creating input field id and referencing fileuploader
+    | instance.
+    |
+    */
+    'id'        => 'fileuploader',
+    /*
+    | --------------------------------------------------------------------------
     | Template file
     | --------------------------------------------------------------------------
     | Template file which are rendered when inserted into template
     |
     */
-    'template'  => 'file-uploader::file-uploader',
+    'template'  => 'file-manager::file-uploader',
 
 ];
